@@ -1,0 +1,24 @@
+{
+  "name": "whatapop",
+  "version": "1.0.0",
+  "description": "Keepcoding AngularJS module",
+  "main": "index.js",
+  "scripts": {
+    "sparrest": "node ./node_modules/node-sparrest/node-sparrest.js",
+    "lite": "lite-server",
+    "dev": "concurrently 'npm run sparrest' 'npm run lite'"
+  },
+  "author": "fraanii94",
+  "license": "MIT",
+  "dependencies": {
+    "@angular/router": "^0.2.0",
+    "angular": "^1.5.6",
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.0",
+    "lite-server": "^2.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^2.1.0",
+    "node-sparrest": "0.0.10"
+  }
+}
