@@ -1,15 +1,12 @@
-<div class="three-col-offset-1">
-
-    <section class="three-col border-square text-center">
-        <header>
-            <h4 class="text-center title-item">{{item.name}}</h4>
-            <img class="img-rounded img-responsive image-item" ng-src="{{item.photos[0]}}" alt="Portada">
-        </header>
-        <article>
-            <p class="text-justify description-title">{{item.description.substring(0,300) + "..."}}</p>
-        </article>
-        <aside>
-            <a class="btn btn-default button-item"> Ver más </a>
-        </aside>
-    </section>
-</div>
+<section class="three-col border-square text-center">
+    <header>
+        <h4 class="text-center title-item">{{item.name}}</h4>
+        <img class="img-rounded img-responsive image-item" ng-src="{{item.photos[0]}}" alt="Portada">
+    </header>
+    <article>
+        <p class="text-justify description-title">{{ item.description | textLimiter }}</p>
+    </article>
+    <aside>
+        <a class="btn btn-default button-item"> Ver más </a>
+    </aside>
+</section>

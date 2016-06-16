@@ -8,14 +8,23 @@ angular.module("whatapop").component("products", {
     },
     templateUrl: "views/products.html",
 
-    controller: function (ProductService) {
+    controller: function (ProductService,CategoryService,$filter) {
 
         var self = this;
         
-        self.$onInit = function () {
-            
+        self.$routerOnActivate = function (next) {
+
             ProductService.getProducts().then(function (response) {
-                self.products = response.data;
+                if(next.params.searchText){
+                    self.products = $filter("filter")(response.data,next.params.searchText);
+                }else{
+                    self.products = response.data;
+                }
+
+            });
+
+            CategoryService.getCategories().then(function (response) {
+                self.categories = response.data;
             });
         };
 

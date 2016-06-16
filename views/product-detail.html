@@ -1,11 +1,11 @@
-<div><section class="col-md-offset-2 col-md-8 detail">
+<div class="col-md-offset-2 col-md-8 detail">
 
     <header>
         <h1 class="text-center">{{ $ctrl.product.name }}</h1>
         <img class="img-rounded img-responsive" src="{{ $ctrl.product.photos[0] }}" alt="">
     </header>
     <br>
-    <aside>
+    <section>
 
         <div class="text-center">
             <label>Categoría: {{$ctrl.product.category.name}}</label><br>
@@ -18,12 +18,11 @@
         </article>
 
 
-    </aside>
+    </section>
 
     <br><br>
 
     <footer>Publicado por <a>{{$ctrl.product.seller.nick}}</a> el {{ $ctrl.product.published_date | date: 'dd/MM/yyyy' }}</footer>
     <br><br>
 
-</section>
 </div>

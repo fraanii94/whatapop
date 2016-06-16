@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Search..." ng-model="$ctrl.searchText"  required>
                 </div>
-                <button type="submit" class="btn btn-primary" ng-click="$ctrl.search($ctrl.searchText)" ng-disabled="search.$invalid">Search</button>
+                <button type="submit" class="btn btn-primary" ng-link="['Products',{searchText: $ctrl.searchText}]" ng-disabled="search.$invalid">Search</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Sign in</a></li>

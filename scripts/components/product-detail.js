@@ -17,10 +17,13 @@ angular.module("whatapop").component("productDetail", {
         self.$routerOnActivate = function (next) {
 
             var id = next.params.id;
-            
+
             ProductService.getProduct(id).then(function (product) {
                 self.product = product;
-            })
+                console.log(product.seller.id)
+
+
+            });
 
         };
 

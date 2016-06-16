@@ -1,4 +1,17 @@
 <header>
-    <h1 class="text-center">Novedades</h1>
+    <h1 class="text-center">Últimos productos</h1>
 </header>
-<box-item ng-repeat="product in $ctrl.products | filter:searchText" item="product" ng-link="['ProductDetail',{id: product.id}]"></box-item>
+
+<section class="category-filter col-md-offset-1 col-md-10">
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group">
+            <button class="btn btn-default" ng-click="$ctrl.categoryName = ''">Todas</button>
+        </div>
+        <div class="btn-group" ng-repeat="category in $ctrl.categories | orderBy: 'name'">
+            <button class="btn btn-default" ng-click="$ctrl.categoryName = category.name">{{category.name}}</button>
+        </div>
+
+    </div>
+</section>
+
+<box-item ng-repeat="product in $ctrl.products | filter:$ctrl.categoryName" item="product" ng-link="['ProductDetail',{id: product.id}]"></box-item>

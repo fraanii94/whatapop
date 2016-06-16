@@ -9,7 +9,7 @@ angular.module("whatapop").component("navbarMenu",{
             $router: "<"
         },
         templateUrl: "views/navbar-menu.html",
-        controller : function (ProductService) {
+        controller : function () {
 
             var self = this;
 
@@ -23,7 +23,7 @@ angular.module("whatapop").component("navbarMenu",{
 
             self.search = function (text) {
 
-                ProductService.search(text);
+                self.$router.navigate(['Products']);
 
             }
 
