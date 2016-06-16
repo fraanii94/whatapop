@@ -8,6 +8,10 @@ angular.module("whatapop").component("root",{
         path: "/products",
         component: "products",
         useAsDefault: true
+    },{
+        name: "ProductDetail",
+        path: "products/:id",
+        component: "productDetail"
     }, {
         name: "NewProduct",
         path: "/products/new",

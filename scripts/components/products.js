@@ -3,7 +3,9 @@
  */
 angular.module("whatapop").component("products", {
 
-
+    bindings: {
+        $router: "<"
+    },
     templateUrl: "views/products.html",
 
     controller: function (ProductService) {
@@ -17,12 +19,6 @@ angular.module("whatapop").component("products", {
             });
         };
 
-        self.openDetail = function (id) {
-
-            console.log(id);
-            self.$router.navigate(['Products']);
-            
-        }
         
     }
 

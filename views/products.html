@@ -1,2 +1,4 @@
-
-<box-item ng-repeat="product in $ctrl.products" item="product" click-item="$ctrl.openDetail(product.id)"></box-item>
+<header>
+    <h1 class="text-center">Novedades</h1>
+</header>
+<box-item ng-repeat="product in $ctrl.products | filter:searchText" item="product" ng-link="['ProductDetail',{id: product.id}]"></box-item>

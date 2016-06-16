@@ -1,3 +1,25 @@
+html{
+    background-color:#f8f8f8;
+
+}
+.navbar-default .navbar-nav>li>a{
+    color:white;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color:#e7e7e7;
+}
+.navbar-default{
+    color: white;
+    background-color:#313335;
+}
+.navbar-default .navbar-brand{
+    color:#e7e7e7;
+}
+.navbar{
+    border: 0px;
+    border-radius: 0px;
+}
+
 .border-square{
     border: solid 1px #bebebe;
     -webkit-border-radius:15px;
@@ -21,8 +43,27 @@
 }
 .description-title{
     height:150px;
+    margin:10px;
 }
 .button-item{
     margin-bottom:15px;
     vertical-align: center;
 }
+
+.paragraph{
+    font-family: 'trebuchet ms', verdana, arial;
+}
+
+.detail{
+    border-radius: 15px;
+    border: 1px solid #a3a3a3;
+}
+
+
+.three-col{
+    width: 25%;
+    float:left;
+    margin-left:6.33%;
+}
+
+

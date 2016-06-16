@@ -23,9 +23,7 @@ angular.module("whatapop").component("navbarMenu",{
 
             self.search = function (text) {
 
-                ProductService.search(text).then(function (response) {
-
-                });
+                ProductService.search(text);
 
             }
 

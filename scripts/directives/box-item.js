@@ -9,18 +9,6 @@ angular.module("whatapop").directive("boxItem",function () {
         scope: {
             clickItem: "&",
             item: "<"
-        },
-        link: function (scope) {
-
-
-
-            scope.notifyClick = function () {
-
-                scope.clickItem({ id: scope.id });
-
-            };
-
-
         }
     };
 
