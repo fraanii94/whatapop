@@ -1,0 +1,29 @@
+<div><section class="col-md-offset-2 col-md-8 detail">
+
+    <header>
+        <h1 class="text-center">{{ $ctrl.product.name }}</h1>
+        <img class="img-rounded img-responsive" src="{{ $ctrl.product.photos[0] }}" alt="">
+    </header>
+    <br>
+    <aside>
+
+        <div class="text-center">
+            <label>Categoría: {{$ctrl.product.category.name}}</label><br>
+            <label>Estado: {{ $ctrl.product.state }}</label><br>
+            <label>Precio: {{ $ctrl.product.price }}</label>
+        </div>
+
+        <article class="text-justify paragraph">
+            {{ $ctrl.product.description }}
+        </article>
+
+
+    </aside>
+
+    <br><br>
+
+    <footer>Publicado por <a>{{$ctrl.product.seller.nick}}</a> el {{ $ctrl.product.published_date | date: 'dd/MM/yyyy' }}</footer>
+    <br><br>
+
+</section>
+</div>
