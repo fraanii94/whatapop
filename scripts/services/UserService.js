@@ -13,8 +13,10 @@ angular.module("whatapop").service('UserService',function ($http,$filter) {
 
     this.getUser = function (id) {
 
-        this.getUsers().then(function (response) {
+        return this.getUsers().then(function (response) {
+
             return $filter("filter")(response.data,{id:id})[0];
+
         });
     };
 

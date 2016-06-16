@@ -15,7 +15,7 @@ angular.module("whatapop").service("ProductService",function ($http,$filter) {
 
         return this.getProducts().then(function (response) {
             return $filter("filter")(response.data, {"id": id})[0];
-        })
+        });
     };
 
     this.newProduct = function (product) {
@@ -24,13 +24,4 @@ angular.module("whatapop").service("ProductService",function ($http,$filter) {
 
     };
 
-    this.search = function (searchText) {
-
-        return this.getProducts().then(function (response) {
-            console.log(searchText);
-            return $filter("filter")(response.data, searchText);
-
-        });
-
-    }
 });

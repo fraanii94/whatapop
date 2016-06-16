@@ -10,7 +10,7 @@ angular.module("whatapop").component("productDetail", {
     },
     templateUrl: "views/product-detail.html",
 
-    controller: function (ProductService) {
+    controller: function (ProductService,UserService) {
         
         var self = this;
 
@@ -19,14 +19,20 @@ angular.module("whatapop").component("productDetail", {
             var id = next.params.id;
 
             ProductService.getProduct(id).then(function (product) {
+
                 self.product = product;
-                console.log(product.seller.id)
 
+                UserService.getUser(product.seller.id).then(function (user) {
 
+                    self.user = user;
+
+                    self.map = {
+                        center: [self.user.latitude, self.user.longitude ],
+                        zoom: 14
+                    };
+
+                });
             });
-
         };
-
     }
-    
 });
