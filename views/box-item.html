@@ -3,8 +3,7 @@
         <h4 class="text-center title-item">{{item.name}}</h4>
         <img class="img-rounded img-responsive image-item" ng-src="{{item.photos[0]}}" alt="Portada">
     </header>
-    <article>
-        <p class="text-justify description-title">{{ item.description | textLimiter }}</p>
+    <article class="text-justify description-title" ng-bind-html="description">
     </article>
     <aside>
         <a class="btn btn-default button-item"> Ver más </a>

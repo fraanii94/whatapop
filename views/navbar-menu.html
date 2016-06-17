@@ -18,7 +18,7 @@
             </ul>
             <form class="navbar-form navbar-left" role="search" name="search">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search..." ng-model="$ctrl.searchText"  required>
+                    <input type="text" class="form-control" placeholder="Search..." ng-model="$ctrl.searchText"   required>
                 </div>
                 <button type="submit" class="btn btn-primary" ng-link="['Products',{searchText: $ctrl.searchText}]" ng-disabled="search.$invalid">Search</button>
             </form>

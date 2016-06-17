@@ -8,7 +8,7 @@ angular.module("whatapop").component("products", {
     },
     templateUrl: "views/products.html",
 
-    controller: function (ProductService,CategoryService,$filter) {
+    controller: function (ProductService,CategoryService,$filter,$sce) {
 
         var self = this;
         

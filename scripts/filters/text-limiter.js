@@ -1,7 +1,7 @@
 /**
  * Created by fran on 16/6/16.
  */
-angular.module("whatapop").filter("textLimiter", function($sce){
+angular.module("whatapop").filter("textLimiter", function(){
 
     return function(text){
 

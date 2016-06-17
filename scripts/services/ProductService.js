@@ -5,10 +5,18 @@
 angular.module("whatapop").service("ProductService",function ($http,$filter) {
 
     this.getProducts = function () {
-
+            
 
         return $http.get("http://localhost:8000/api/products");
         
+    };
+    
+    this.getOwnerProducts = function (owner) {
+      
+        return this.getProducts().then(function (response) {
+            
+            return $filter("filter")(response.data, {"seller": {"id": owner}});
+        })
     };
 
     this.getProduct = function (id) {
