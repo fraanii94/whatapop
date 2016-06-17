@@ -4,6 +4,14 @@
 angular.module("whatapop").component("root",{
 
     $routeConfig: [{
+        name: "Users",
+        path: "/users",
+        component: "users"
+    },{
+        name: "UserProfile",
+        path: "/users/:id",
+        component: "profile"
+    },{
         name: "Products",
         path: "/products",
         component: "products",

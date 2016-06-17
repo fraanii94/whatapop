@@ -80,4 +80,11 @@ gm-map {
     width: 100%;
     height: 300px;
 }
+.img-profile{
+    border-radius:10%;
+    width: 381px;
+}
 
+.margin-bottom{
+    margin-bottom: 30px;
+}
