@@ -2,12 +2,12 @@
     <section class="col-md-12">
         <aside class="col-md-offset-1 col-md-3 margin-bottom">
             <div class="col-md-2">
-                <img class="img-circle img-profile" ng-src="{{$ctrl.getSource($ctrl.user.avatar)}}" alt="Avatar del usuario">
+                <img class="img-circle img-profile" ng-src="{{::$ctrl.getSource($ctrl.user.avatar)}}" alt="Avatar del usuario">
             </div>
         </aside>
         <aside class="col-md-offset-1 col-md-5">
-            <h3>{{$ctrl.user.name}} - "{{$ctrl.user.nick}}"</h3>
-            <h5>Contacto: {{$ctrl.user.email}}</h5>
+            <h3>{{::$ctrl.user.name}} - "{{::$ctrl.user.nick}}"</h3>
+            <h5>Contacto: {{::$ctrl.user.email}}</h5>
             <div class="col-md-8">
                 <gm-map center="[$ctrl.user.latitude,$ctrl.user.longitude]" zoom="14">
                     <gm-marker position="[$ctrl.user.latitude,$ctrl.user.longitude]"></gm-marker>
@@ -24,7 +24,7 @@
             <button class="btn btn-default" ng-click="$ctrl.categoryName = ''">Todos</button>
         </div>
         <div class="btn-group" ng-repeat="category in $ctrl.categories | orderBy: 'name'">
-            <button class="btn btn-default" ng-click="$ctrl.categoryName = category.name">{{category.name}}</button>
+            <button class="btn btn-default" ng-click="$ctrl.categoryName = category.name">{{::category.name}}</button>
         </div>
 
     </div>

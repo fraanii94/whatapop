@@ -3,15 +3,15 @@
 </div>
 <section class="col-md-offset-2 col-md-8 detail">
     <header>
-        <h1 class="text-center">{{ $ctrl.product.name }}</h1>
-        <img class="img-rounded img-responsive" ng-src="{{$ctrl.getSource($ctrl.product.photos[0])}}" alt="">
+        <h1 class="text-center">{{ ::$ctrl.product.name }}</h1>
+        <img class="img-rounded img-responsive" ng-src="{{::$ctrl.getSource($ctrl.product.photos[0])}}" alt="">
     </header>
     <br>
 
     <div class="text-center">
-        <label>Categoría: {{$ctrl.product.category.name}}</label><br>
-        <label>Estado: {{ $ctrl.product.state }}</label><br>
-        <label>Precio: {{ $ctrl.product.price | currency:" €"}}</label><br>
+        <label>Categoría: {{::$ctrl.product.category.name}}</label><br>
+        <label>Estado: {{ ::$ctrl.product.state }}</label><br>
+        <label>Precio: {{ ::$ctrl.product.price | currency:" €"}}</label><br>
         <label ng-mouseover="$ctrl.starType = 'glyphicon-star'" ng-mouseleave="$ctrl.starType = 'glyphicon-star-empty'">Calificar:
             <span ng-repeat="i in [1,2,3,4,5]" class="glyphicon {{$ctrl.starType}}" id="star-{{i}}"></span>
 
@@ -19,19 +19,19 @@
 
     </div>
 
-    <article class="text-justify paragraph" ng-bind-html="$ctrl.description">
+    <article class="text-justify paragraph" ng-bind-html="::$ctrl.description">
         
     </article>
 
     <br><br>
     <div class="col-md-offset-3 col-lg-6">
 
-        <gm-map center="$ctrl.center" zoom="14">
-            <gm-marker position="$ctrl.center"></gm-marker>
+        <gm-map center="::$ctrl.center" zoom="14">
+            <gm-marker position="::$ctrl.center"></gm-marker>
         </gm-map>
     </div>
 
-    <footer class="col-md-12">Publicado por <a ng-link="['UserProfile',{id:$ctrl.product.seller.id}]">{{$ctrl.product.seller.nick}}</a> el {{ $ctrl.product.published_date | date: 'dd/MM/yyyy' }}</footer>
+    <footer class="col-md-12">Publicado por <a ng-link="['UserProfile',{id:$ctrl.product.seller.id}]">{{::$ctrl.product.seller.nick}}</a> el {{ ::$ctrl.product.published_date | date: 'dd/MM/yyyy' }}</footer>
 
 
 </section>

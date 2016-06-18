@@ -1,9 +1,9 @@
 <section class="three-col border-square text-center">
     <header>
-        <h4 class="text-center title-item">{{item.name}}</h4>
-        <img class="img-rounded img-responsive image-item" ng-src="{{ getSource(item.photos[0])}}" alt="Portada">
+        <h4 class="text-center title-item">{{::item.name}}</h4>
+        <img class="img-rounded img-responsive image-item" ng-src="{{ ::getSource(item.photos[0])}}" alt="Portada">
     </header>
-    <article class="text-justify description-title" ng-bind-html="description">
+    <article class="text-justify description-title" ng-bind-html="::description">
     </article>
     <aside>
         <a class="btn btn-default button-item"> Ver más </a>
