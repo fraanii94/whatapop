@@ -21,26 +21,23 @@ angular.module("whatapop").component("productDetail", {
 
             self.favs = JSON.parse(localStorage.getItem('favs')) || [];
             
-            
-            
             var id = next.params.id;
 
             ProductService.getProduct(id).then(function (product) {
 
                 self.product = product;
-                console.log("product",self.product);
+
                 self.description = $sce.trustAsHtml(self.product.description);
+
                 UserService.getUser(product.seller.id).then(function (user) {
 
                     self.user = user;
-                    if (self.user.latitude && self.user.longitude){
+
+                   
                         self.center = [self.user.latitude, self.user.longitude ];
-                    }else{
-                        self.center = undefined;
-                    }
+
 
                     self.zoom = 14;
-                    
 
                 });
             });
@@ -60,6 +57,7 @@ angular.module("whatapop").component("productDetail", {
             localStorage.setItem('favs',JSON.stringify(self.favs));
 
         };
+
         self.dislike = function (id) {
 
             var i = self.favs.indexOf(id);
