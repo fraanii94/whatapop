@@ -19,8 +19,10 @@ angular.module("whatapop").component("productDetail", {
             
         self.$routerOnActivate = function (next) {
 
-
-
+            self.favs = JSON.parse(localStorage.getItem('favs')) || [];
+            
+            
+            
             var id = next.params.id;
 
             ProductService.getProduct(id).then(function (product) {
@@ -49,5 +51,25 @@ angular.module("whatapop").component("productDetail", {
         };
 
         self.getSource = ProductService.getSource;
+
+
+        self.like = function (id) {
+
+            self.favs.push(id);
+
+            localStorage.setItem('favs',JSON.stringify(self.favs));
+
+        };
+        self.dislike = function (id) {
+
+            var i = self.favs.indexOf(id);
+
+            if(i != -1) {
+                self.favs.splice(i, 1);
+            }
+
+            localStorage.setItem('favs',JSON.stringify(self.favs));
+
+        };
     }
 });

@@ -12,11 +12,10 @@
         <label>Categoría: {{::$ctrl.product.category.name}}</label><br>
         <label>Estado: {{ ::$ctrl.product.state }}</label><br>
         <label>Precio: {{ ::$ctrl.product.price | currency:" €"}}</label><br>
-        <label ng-mouseover="$ctrl.starType = 'glyphicon-star'" ng-mouseleave="$ctrl.starType = 'glyphicon-star-empty'">Calificar:
-            <span ng-repeat="i in [1,2,3,4,5]" class="glyphicon {{$ctrl.starType}}" id="star-{{i}}"></span>
+        <button ng-if="!$ctrl.favs.includes($ctrl.product.id)" class="btn btn-success" ng-click="$ctrl.like($ctrl.product.id)"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Me gusta</button>
 
-        </label>
-
+        <button ng-if="$ctrl.favs.includes($ctrl.product.id)" class="btn btn-danger" ng-click="$ctrl.dislike($ctrl.product.id)"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> No me gusta</button>
+        <br><br>
     </div>
 
     <article class="text-justify paragraph" ng-bind-html="::$ctrl.description">

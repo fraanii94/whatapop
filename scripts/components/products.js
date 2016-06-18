@@ -14,6 +14,8 @@ angular.module("whatapop").component("products", {
         
         self.$routerOnActivate = function (next) {
 
+            
+
             ProductService.getProducts().then(function (response) {
                 if(next.params.searchText){
                     self.products = $filter("filter")(response.data,next.params.searchText);
