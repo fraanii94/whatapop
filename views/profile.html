@@ -2,7 +2,7 @@
     <section class="col-md-12">
         <aside class="col-md-offset-1 col-md-3 margin-bottom">
             <div class="col-md-2">
-                <img class="img-circle img-profile" src="{{$ctrl.user.avatar}}" alt="Avatar del usuario">    
+                <img class="img-circle img-profile" ng-src="{{$ctrl.getSource($ctrl.user.avatar)}}" alt="Avatar del usuario">
             </div>
         </aside>
         <aside class="col-md-offset-1 col-md-5">
@@ -16,7 +16,8 @@
         </aside>
     </section>
 </div>
-<section class="category-filter col-md-offset-1 col-md-10">
+
+<section ng-if="$ctrl.products.length > 0" class="category-filter col-md-offset-1 col-md-10">
     <h2>Productos de {{$ctrl.user.name}}</h2>
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
         <div class="btn-group">
@@ -27,6 +28,10 @@
         </div>
 
     </div>
+</section>
+
+<section class="col-md-offset-1 col-md-10 text-center" ng-if="$ctrl.products.length === 0">
+    <h2>Este usuario no ha añadido ningún producto</h2>
 </section>
 
 <section>

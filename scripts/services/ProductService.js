@@ -2,12 +2,14 @@
  * Created by fran on 13/6/16.
  */
 
-angular.module("whatapop").service("ProductService",function ($http,$filter) {
+angular.module("whatapop").service("ProductService",function ($http,$filter,Config) {
+
+    var productUrl = Config.serverUrl + Config.productEndPoint;
 
     this.getProducts = function () {
             
 
-        return $http.get("http://localhost:8000/api/products");
+        return $http.get(productUrl);
         
     };
     
@@ -28,8 +30,13 @@ angular.module("whatapop").service("ProductService",function ($http,$filter) {
 
     this.newProduct = function (product) {
 
-        return $http.post("http://localhost:8000/api/products",product);
+        return $http.post(productUrl,product);
 
+    };
+
+    this.getSource = function (source) {
+        console.log(source);
+        return source ? (Config.serverUrl + "/" +  source) : undefined;
     };
 
 });

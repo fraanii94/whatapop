@@ -88,3 +88,10 @@ gm-map {
 .margin-bottom{
     margin-bottom: 30px;
 }
+.margin-top{
+    margin-top: 100px;
+}
+.glyphicon-star:hover, .glyphicon-star:hover ~ .glyphicon-star:before {
+
+    color: yellow;
+}

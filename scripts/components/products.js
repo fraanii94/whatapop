@@ -27,6 +27,8 @@ angular.module("whatapop").component("products", {
                 self.categories = response.data;
             });
         };
+        
+
 
         
     }

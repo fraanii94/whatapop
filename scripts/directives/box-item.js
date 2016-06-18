@@ -1,7 +1,7 @@
 /**
  * Created by fran on 15/6/16.
  */
-angular.module("whatapop").directive("boxItem",function ($sce,$filter) {
+angular.module("whatapop").directive("boxItem",function ($sce,$filter,ProductService) {
 
     return {
         restrict: "EA",
@@ -13,6 +13,10 @@ angular.module("whatapop").directive("boxItem",function ($sce,$filter) {
         
         link: function (scope) {
             scope.description = $sce.trustAsHtml($filter('textLimiter')(scope.item.description));
+
+            scope.getSource = ProductService.getSource;
+
+
         }
     };
 

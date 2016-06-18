@@ -11,13 +11,42 @@ angular.module("whatapop").directive("userForm",function () {
         },
         link: function (scope) {
 
-            scope.notifySave = function () {
-                var user = {};
-                scope.clickSave({user: user});
+            scope.user = {};
 
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(function (data) {
+
+                    scope.user.latitude = data.coords.latitude;
+                    scope.user.longitude = data.coords.longitude;
+
+
+
+                },function () {
+
+                    alert("En un futuro podría ser necesario su posición");
+
+                });
             }
+
+            scope.onImageSelected = function(file) {
+                scope.user.avatar = file;
+            };
+
+            scope.notifySave = function () {
+                if(scope.sign.$valid){
+                    scope.user.name = scope.name;
+                    scope.user.nick = scope.nick;
+                    scope.user.email = scope.email;
+
+                    scope.clickSave({user: scope.user});
+                }
+
+
+
+
+            };
+
 
         }
     }
-
 });

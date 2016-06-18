@@ -15,23 +15,29 @@ angular.module("whatapop").component("productDetail", {
         var self = this;
         self.center = [0,0];
         self.zoom = 14;
+        self.starType = "glyphicon-star-empty";
             
         self.$routerOnActivate = function (next) {
-            
+
+
 
             var id = next.params.id;
 
             ProductService.getProduct(id).then(function (product) {
 
                 self.product = product;
+                console.log("product",self.product);
                 self.description = $sce.trustAsHtml(self.product.description);
                 UserService.getUser(product.seller.id).then(function (user) {
 
                     self.user = user;
-
-                    
+                    if (self.user.latitude && self.user.longitude){
                         self.center = [self.user.latitude, self.user.longitude ];
-                        self.zoom = 14;
+                    }else{
+                        self.center = undefined;
+                    }
+
+                    self.zoom = 14;
                     
 
                 });
@@ -40,6 +46,8 @@ angular.module("whatapop").component("productDetail", {
         
         self.back = function(){
             self.$router.navigate(['Products']);
-        }
+        };
+
+        self.getSource = ProductService.getSource;
     }
 });
